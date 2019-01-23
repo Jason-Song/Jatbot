@@ -20,11 +20,11 @@
 
 ## 软件启动：
 1. 进入项目目录，windows执行
-  ```
-  bin/start-all.bat
-  ```
-  linux执行
-  ```
-  bin/start-all.sh
-  ```
+    ```
+    bin/start-all.bat
+    ```
+    linux执行
+    ```
+    bin/start-all.sh
+    ```
 2. 访问http://localhost:3001
