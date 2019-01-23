@@ -1,6 +1,6 @@
 # Jatbot
 
-软件演示：
+## 软件演示：
 ![自动聊天效果演示](https://github.com/Jason-Song/readme-images/blob/master/jatbot.gif)
 
 ## 基本介绍：
