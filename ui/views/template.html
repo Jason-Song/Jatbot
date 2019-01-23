@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>vue</title>
+<script src="./vue"></script>
+<script src="./axios"></script>
+</head>
+<body>
+<div id="app">
+用户名：<input v-model='user'/> </br>
+所属省：<input v-model='province'/> </br>
+所属市：<input v-model='city'/> </br>
+所属街道：<input v-model='street'/> </br>
+<ul class="box">
+    <li v-for='obj in result'>相似度：{{obj._score}}<br />匹配项：<span v-html = 'obj.highlight'></span><br />内容：{{obj._source}} </li>  <!--循环数组-->
+</ul>
+</div><script>
+var vm = new Vue({
+    el:'#app',
+    data:{
+        user:'',
+        province:'',
+        city:'',
+        street:'',
+        result:''
+    },
+    watch: {
+       user:function (val) {
+         var _self=this;
+         let should_conditions = []
+         if(val!==''){
+             should_conditions.push({match:{real_name:val}})
+         }
+         if(_self.province!==''){
+             should_conditions.push({match:{address_province:_self.province}})
+         }
+         if(_self.city!==''){
+             should_conditions.push({match:{address_city:_self.city}})
+         }
+         if(_self.street!==''){
+              should_conditions.push({match:{address_street:_self.street}})
+         }
+         axios.post("http://127.0.0.1:3001/search",{query:{bool:{must:should_conditions}},highlight:{fields : {"*" : {"pre_tags":["<span style='color:red'>"],"post_tags":["</span>"]}}}}).then(function(response){
+             console.log(response);
+             _self.result=response.data
+         })
+      },
+      province:function (val) {
+         var _self=this;
+         let should_conditions = []
+         if(val!==''){
+             should_conditions.push({match:{address_province:val}})
+         }
+         if(_self.user!==''){
+             should_conditions.push({match:{real_name:_self.user}})
+         }
+         if(_self.city!==''){
+             should_conditions.push({match:{address_city:_self.city}})
+         }
+         if(_self.street!==''){
+              should_conditions.push({match:{address_street:_self.street}})
+         }
+         axios.post("http://127.0.0.1:3001/search",{query:{bool:{must:should_conditions}},highlight:{fields : {"*" : {"pre_tags":["<span style='color:red'>"],"post_tags":["</span>"]}}}}).then(function(response){
+             console.log(response);
+             _self.result=response.data
+         })
+      },
+      city:function (val) {
+         var _self=this;
+         let should_conditions = []
+         if(val!==''){
+             should_conditions.push({match:{address_city:val}})
+         }
+         if(_self.user!==''){
+             should_conditions.push({match:{real_name:_self.user}})
+         }
+         if(_self.province!==''){
+             should_conditions.push({match:{address_province:_self.province}})
+         }
+         if(_self.street!==''){
+              should_conditions.push({match:{address_street:_self.street}})
+         }
+         axios.post("http://127.0.0.1:3001/search",{query:{bool:{must:should_conditions}},highlight:{fields : {"*" : {"pre_tags":["<span style='color:red'>"],"post_tags":["</span>"]}}}}).then(function(response){
+             console.log(response);
+             _self.result=response.data
+         })
+      },
+      street:function (val) {
+         var _self=this;
+         let should_conditions = []
+         if(val!==''){
+             should_conditions.push({match:{address_street:val}})
+         }
+         if(_self.user!==''){
+             should_conditions.push({match:{real_name:_self.user}})
+         }
+         if(_self.province!==''){
+             should_conditions.push({match:{address_province:_self.province}})
+         }
+         if(_self.city!==''){
+             should_conditions.push({match:{address_city:_self.city}})
+         }
+         axios.post("http://127.0.0.1:3001/search",{query:{bool:{must:should_conditions}},highlight:{fields : {"*" : {"pre_tags":["<span style='color:red'>"],"post_tags":["</span>"]}}}}).then(function(response){
+             console.log(response);
+             _self.result=response.data
+         })
+      }
+    }
+})
+</script>
+</body>
+</html>
