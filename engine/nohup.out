@@ -1,0 +1,11 @@
+
+C:\Users\ASUS\PycharmProjects\JatBot\engine>node ../ui/index.js 
+events.js:183
+      throw e2019-01-23 14:51:09+0800 [-] Log opened.
+202019-01-23 14:51:13 INFO     root  - Rasa process starting
+2019-01-23 14:51:14 WARNING  py.warnings  - C:\python36\lib\site-packages\rasa_nlu\extractors\entity_synonyms.py:85: UserWarning: Failed to load synonyms file from 'models/current/nlu\entity_synonyms.json'
+  "".format(entity_synonyms_file))
+
+INFO:tensorflow:Restoring parameters from models/current/nlu\intent_classifier_tensorflow_embedding.ckpt
+2019-01-23 14:51:15 INFO     tensorflow  - Restoring parameters from models/current/nlu\intent_classifier_tensorflow_embedding.ckpt
+2019-01-23 14:51:15 WARNING  py.warnings  - C:\python36\lib\site

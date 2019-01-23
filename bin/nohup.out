@@ -1,0 +1,32 @@
+
+C:\Users\ASUS\PycharmProjects\JatBot\bin>python -m rasa_core.run --enable_api -d models/dia2019-01-23 14:47:58+0800 [-] Log opened.
+202019-01-23 14:48:02 INFO     root  - Rasa process starting
+Traceback (most recent call last):
+  File "C:\python36\lib\site-packages\rasa_nlu\model.py", line 74, in load
+    data = utils.read_json_file(metadata_file)
+  File "C:\python36\lib\site-packages\rasa_nlu\utils\__init__.py", line 211, in read_json_file
+    content = read_file(filename)
+  File "C:\python36\lib\site-packages\rasa_nlu\utils\__init__.py", line 205, in read_file
+    with io.open(filename, encoding=encoding) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'models/current/nlu\\metadata.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python36\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\python36\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\python36\lib\site-packages\rasa_core\run.py", line 246, in <module>
+    _endpoints.nlu)
+  File "C:\python36\lib\site-packages\rasa_core\interpreter.py", line 48, in create
+    return RasaNLUInterpreter(model_directory=obj)
+  File "C:\python36\lib\site-packages\rasa_core\interpreter.py", line 282, in __init__
+    self._load_interpreter()
+  File "C:\python36\lib\site-packages\rasa_core\interpreter.py", line 298, in _load_interpreter
+    self.interpreter = Interpreter.load(self.model_directory)
+  File "C:\python36\lib\site-packages\rasa_nlu\model.py", line 288, in load
+    model_metadata = Metadata.load(model_dir)
+  File "C:\python36\lib\site-packages\rasa_nlu\model.py", line 79, in load
+    "from '{}'. {}".format(abspath, e))
+rasa_nlu.model.InvalidProjectError: Failed to load model metadata from 'C:\Users\ASUS\PycharmProjects\JatBot\bin\models\current\nlu\metadata.json'. [Errno 2] No such file or directory: 'models/current/nlu\\metadata.json'
