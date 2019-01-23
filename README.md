@@ -1,5 +1,8 @@
 # Jatbot
 
+软件演示：
+![自动聊天效果演示](https://github.com/Jason-Song/readme-images/blob/master/jatbot.gif)
+
 ## 基本介绍：
   自动聊天软件，支持中英文，采用最新版rasa引擎，可进行意图识别、多轮对话、动作跟踪等功能，自动引导客户消费，应答客户咨询。
 
@@ -12,6 +15,8 @@
    |-ui/ 基于nodejs、express的前端对话页面
 ```
 ## 环境要求：
+* nodejs (8.11.1)
+* express (4.16.4)
 * python (3.6.2)
 * tensorflow (1.10.0)
 * rasa-core (0.12.3)
