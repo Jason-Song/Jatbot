@@ -23,8 +23,8 @@
   ```
   bin/start-all.bat
   ```
-2. linux执行
+  linux执行
   ```
   bin/start-all.sh
   ```
-3. 访问http://localhost:3001
+2. 访问http://localhost:3001
